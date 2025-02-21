@@ -14,7 +14,6 @@ from tqdm.auto import tqdm
 torch.cuda.is_available()
 # Enable PyTorch 2.x编 (Optional)
 torch.set_float32_matmul_precision('high')  # Improve the matrix compute efficience.
-
 # Set the device. 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
@@ -48,7 +47,7 @@ train_df, temp_df = train_test_split(df, test_size=0.3, stratify=df['label'])
 val_df, test_df = train_test_split(temp_df, test_size=0.5, stratify=temp_df['label'])
 
 # Initialization tokenizer
-model_name = "/hw_data/dean-ws/emotion-bert/microsoft/deberta-v3-base"  # 根据显存可选 base/small
+model_name = "/hw_data/dean-ws/emotion-bert/microsoft/deberta-v3-base"  # base/small
 tokenizer = DebertaV2Tokenizer.from_pretrained(model_name)
 
 # Create PyTorch Dataset
@@ -180,3 +179,8 @@ for txt in [
     probs = predict(txt)
     idx = np.argmax(probs)
     print(probs, M[idx])
+
+
+# save the tokenizer
+save_path = "./tokenizer-v2"  # 替换为目标路径
+tokenizer.save_pretrained(save_path)
