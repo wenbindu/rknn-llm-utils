@@ -1,0 +1,20 @@
+[Unit]
+Description=Text Processing API Service
+After=network.target
+
+[Service]
+Type=simple
+User=proembed
+Group=proembed
+WorkingDirectory=/home/proembed/emotion
+Environment=PYTHONPATH=/home/proembed/emotion
+ExecStart=/home/proembed/.local/bin/uvicorn main:app --host 0.0.0.0 --port 8080
+Restart=on-failure
+RestartSec=10s
+KillSignal=SIGINT
+StandardOutput=append:/home/proembed/emotion/logs/api.log
+StandardError=append:/home/proembed/emotion/logs/api_error.log
+SyslogIdentifier=sentiment-api
+
+[Install]
+WantedBy=multi-user.target

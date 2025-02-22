@@ -1,0 +1,3 @@
+onnx_path: './cn_roberta_v1.onnx'
+rknn_path: './cn_roberta_v1.rknn'
+tokenizer_path: ./cn_roberta_model_v1/

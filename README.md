@@ -2,12 +2,16 @@
 
 ## Solutions
 1. rknn-debert-v3: `From microsoft/deberta-v3-base`
-
+2. rknn-cn-roberta: `From hfl/chinese-roberta-wwm-ext`
     
 
 ## Prepare Environments
 
+```sh
+export HF_ENDPOINT=https://hf-mirror.com
 
+huggingface-cli download --resume-download hfl/chinese-roberta-wwm-ext --local-dir hfl/chinese-roberta-wwm-ext --local-dir-use-symlinks False
+```
 
 ## rknn-toolkit2
 > v2.3.0
