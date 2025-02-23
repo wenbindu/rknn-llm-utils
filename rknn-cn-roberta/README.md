@@ -19,8 +19,12 @@
 ├── train-roberta.py    # Trainer
 ├── torch2onnx.py       # torch model => onnx model
 ├── onnx2rknn.py        # onnx model => rknn model
+├── onnx2ov.sh          # onnx model => openvino model
+├── infer-onnx.py       # Inference: ONNX/GPU
+├── infer-torch.py      # Inference: Torch/GPU
+├── infer-ov.py         # Inference: Openvino/CPU
 ├── infer-simulator.py  # Inference: simulator
-└── infer-rk3588.py     # Inference: rk3588 
+└── infer-rk3588.py     # Inference: rk3588/NPU
 
 ## APP
 

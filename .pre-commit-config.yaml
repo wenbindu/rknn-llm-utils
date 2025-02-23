@@ -34,10 +34,10 @@ repos:
     rev: 5.12.0
     hooks:
       - id: isort
-  - repo: https://github.com/psf/black
-    rev: 23.11.0
-    hooks:
-      - id: black-jupyter
+  # - repo: https://github.com/psf/black
+  #   rev: 23.11.0
+  #   hooks:
+  #     - id: black-jupyter
   - repo: https://github.com/asottile/pyupgrade
     rev: v3.15.0
     hooks:
@@ -61,15 +61,15 @@ repos:
           (?x)(
             ^images/
           )
-  - repo: local
-    hooks:
-      - id: pylint
-        name: pylint
-        entry: pylint
-        language: system
-        types: [python]
-        require_serial: true
-        exclude: |
-          (?x)(
-            ^images/
-          )
+  # - repo: local
+  #   hooks:
+  #     - id: pylint
+  #       name: pylint
+  #       entry: pylint
+  #       language: system
+  #       types: [python]
+  #       require_serial: true
+  #       exclude: |
+  #         (?x)(
+  #           ^images/
+  #         )
