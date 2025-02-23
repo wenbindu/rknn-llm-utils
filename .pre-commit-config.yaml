@@ -61,15 +61,15 @@ repos:
           (?x)(
             ^images/
           )
-  # - repo: local
-  #   hooks:
-  #     - id: pylint
-  #       name: pylint
-  #       entry: pylint
-  #       language: system
-  #       types: [python]
-  #       require_serial: true
-  #       exclude: |
-  #         (?x)(
-  #           ^images/
-  #         )
+  - repo: local
+    hooks:
+      - id: pylint
+        name: pylint
+        entry: pylint
+        language: system
+        types: [python]
+        require_serial: true
+        exclude: |
+          (?x)(
+            ^images/
+          )
